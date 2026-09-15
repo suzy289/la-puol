@@ -45,7 +45,7 @@ export default function LoginPage() {
       userId: currentUserId,
       role: "client",
       displayName: values.email.split("@")[0],
-      restaurantId: finalRestaurantId,
+      restaurantId: finalRestaurantId ?? undefined,
       email: values.email,
     });
 

@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #f9fafb;
+  --color-foreground: #0f172a;
+  --color-primary: #1e3a8a;
+  --color-secondary: #10b981;
+  --color-accent: #ff4500;
+  --color-surface: #ffffff;
+  --color-border: #e5e7eb;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  @apply box-border;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  @apply antialiased;
+}
+
+a {
+  @apply text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 font-semibold transition-all duration-150;
+}
+
+.btn-primary {
+  @apply bg-[var(--color-primary)] text-white shadow-sm hover:shadow-md;
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-primary), black 10%);
+  }
+}
+
+.btn-accent {
+  @apply bg-[var(--color-accent)] text-white shadow-sm hover:shadow-md;
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-accent), black 10%);
+  }
+}
+
+.btn-ghost {
+  @apply text-[var(--color-primary)] bg-transparent hover:text-[var(--color-foreground)];
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-primary), transparent 90%);
+  }
+}
+
+.card {
+  @apply bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl shadow-sm;
+}
+
+.pill {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium border border-[var(--color-border)] bg-white/70 backdrop-blur;
+}
